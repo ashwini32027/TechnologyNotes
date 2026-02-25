@@ -1,0 +1,6 @@
+document.addEventListener('copy', e => {
+  e.stopImmediatePropagation();
+});
+document.addEventListener('paste', e => {
+  e.stopImmediatePropagation();
+});
