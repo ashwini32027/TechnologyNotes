@@ -4,3 +4,11 @@ document.addEventListener('copy', e => {
 document.addEventListener('paste', e => {
   e.stopImmediatePropagation();
 });
+
+(function unlockPage() {
+  document.oncopy = document.onpaste = document.oncut =
+  document.onkeydown = document.oncontextmenu = null;
+  ['copy','paste','cut','keydown','contextmenu'].forEach(evt => {
+    document.addEventListener(evt, e => e.stopImmediatePropagation(), true);
+  });
+})();
